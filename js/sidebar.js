@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             logoLink.href = "index.html";
 
             const logoElement = document.createElement('img');
-            logoElement.src = "/images/logo.jpg";
+            logoElement.src = "images/logo.jpg";
             logoElement.alt = "Logo Voci in Scena";
             logoElement.classList.add("logo");
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             facebookLink.setAttribute('aria-label', 'Facebook');
 
             const facebookIcon = document.createElement('img');
-            facebookIcon.src = "/images/facebook.png";
+            facebookIcon.src = "images/facebook.png";
             facebookIcon.alt = "Facebook";
             facebookIcon.classList.add('social-icon');
             facebookLink.appendChild(facebookIcon);
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             instagramLink.setAttribute('aria-label', 'Instagram');
 
             const instagramIcon = document.createElement('img');
-            instagramIcon.src = "/images/instagram.png";
+            instagramIcon.src = "images/instagram.png";
             instagramIcon.alt = "Instagram";
             instagramIcon.classList.add('social-icon');
             instagramLink.appendChild(instagramIcon);
