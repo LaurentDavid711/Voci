@@ -1,21 +1,21 @@
 /* Importation des polices */
 @font-face {
     font-family: 'Goudy Old Style';
-    src: url('/fonts/goudy-oldstyle.ttf') format('truetype');
+    src: url('fonts/goudy-oldstyle.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Goudy Old Style Bold';
-    src: url('/fonts/goudy-oldstyle-bold.ttf') format('truetype');
+    src: url('fonts/goudy-oldstyle-bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Goudy Old Style Italic';
-    src: url('/fonts/goudy-oldstyle-italic.ttf') format('truetype');
+    src: url('fonts/goudy-oldstyle-italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
@@ -30,7 +30,7 @@
 body {
     font-family: 'Goudy Old Style', Arial, sans-serif;
     color: white;
-    background-image: url('/images/background.jpg');
+    background-image: url('images/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
