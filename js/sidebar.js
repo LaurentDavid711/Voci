@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             billetterieLink.setAttribute('aria-label', 'Billetterie Claudio Monteverdi');
 
             const billetterieIcon = document.createElement('img');
-            billetterieIcon.src = "/images/billetterie.png";
+            billetterieIcon.src = "images/billetterie.png";
             billetterieIcon.alt = "Billetterie";
             billetterieIcon.classList.add('billetterie-icon');
             billetterieLink.appendChild(billetterieIcon);
