@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Répertoire – Voci in Scena</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    fetch('concerts.json')
+        .then(response => response.json())
+        .then(data => {
+        const main = document.querySelector('main');
+        main.innerHTML = '';
+
+        // Dernier concert
+        const dernier = data.dernier;
+        if (dernier) {
+            const titleBox = document.createElement('div');
+            titleBox.classList.add('title-box');
+            
+            const title = document.createElement('div');
+            title.innerText = dernier.title;
+            titleBox.appendChild(title);
+
+            const details = document.createElement('p');
+            details.innerText = `${dernier.date} – ${dernier.location}`;;
+            titleBox.appendChild(details);
+
+            main.appendChild(titleBox);
+
+            const img = document.createElement('img');
+            img.src = `/images/${dernier.folder}/${dernier.poster}`;
+            img.alt = dernier.title;
+            img.classList.add('concert-poster');
+            main.appendChild(img);
+        }
+
+        // Anciens concerts
+        const anciens = data.anciens || [];
+        anciens.forEach(concert => {
+            const titleBox = document.createElement('div');
+            titleBox.classList.add('title-box');
+
+            const title = document.createElement('div');
+            title.innerText = concert.title;
+            titleBox.appendChild(title);
+
+            const details = document.createElement('p');
+            details.innerText = `${concert.date} – ${concert.location}`;
+            titleBox.appendChild(details);
+
+            main.appendChild(titleBox);
+
+            const img = document.createElement('img');
+            img.src = `/images/${concert.folder}/${concert.poster}`;
+            img.alt = concert.title;
+            img.classList.add('concert-poster');
+            main.appendChild(img);
+        });
+        })
+        .catch(err => {
+        console.error("Erreur lors du chargement des concerts :", err);
+        });
+    });
+  </script>
+</head>
+<script src="js/sidebar.js"></script>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="vociPresentation.html">Qui sommes-nous ?</a></li>
+        <li><a href="https://icm-musique.fr/enseignants/professeur-piano-a-domicile-chant-olivier-rot/" target="_blank">Chef de chœur</a></li>
+        <li><a href="repertoire.html">Répertoire</a></li>
+        <li><a href="#">Nous soutenir</a></li>
+        <li><a href="nousContacter.html">Nous contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <aside class="sidebar">
+      <!-- Vide ici, mais on peut y remettre la logique plus tard -->
+    </aside>
+
+    <main>
+      <!-- Le JS remplira ici les concerts -->
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2024-2025 Voci in Scena - design by 
+      <a href="https://blackswordstudios.com" target="_blank" style="color: #ccc; text-decoration: underline;">BSS</a>
+    </p>
+  </footer>
+</body>
+</html>

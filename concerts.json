@@ -1,0 +1,34 @@
+{
+    "concerts": [
+        {
+            "date": "XXX octobre",
+            "location": "Bastille, 20h30",
+            "program": "Haydn ''Missi in Augustis, Te Deum'",
+            "details": "Pas de détails"
+        }
+    ],
+
+    "dernier": {
+    "title": "Haydn 'Missi in Augustis, Air de concert, Scène de Bérénice'",
+    "date": "4 avril 2024",
+    "location": "Eglise Américaine de Paris, 20h30",
+    "poster": "Affiche_Concert_Haydn_4avril.png",
+    "folder": "dernier-concert"
+  },
+  "anciens": [
+    {
+      "title": "Monteverdi 'De guerre et d'amour'",
+      "date": "7 décembre 2023",
+      "location": "Sceaux, 20h30",
+      "poster": "Affiche_Monteverdi.jpg",
+      "folder": "anciens-concerts"
+    },
+    {
+      "title": "Haendel 'Dixit Dominus, Laudate Pueri, Suite'",
+      "date": "4 juin 2023",
+      "location": "Eglise Américaine de Paris, 19h30",
+      "poster": "Affiche_Haendel_0406.jpg",
+      "folder": "anciens-concerts"
+    }
+  ]
+}
