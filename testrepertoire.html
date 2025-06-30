@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Répertoire – Voci in Scena</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    .grid-repertoire {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .repertoire-block {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .repertoire-block img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .grid-repertoire {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .grid-repertoire {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="vociPresentation.html">Qui sommes-nous ?</a></li>
+        <li><a href="chefChoeur.html">Chef de chœur</a></li>
+        <li><a href="repertoire.html">Répertoire</a></li>
+        <li><a href="#">Nous soutenir</a></li>
+        <li><a href="nousContacter.html">Nous contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="title-box">Répertoire</h1>
+    <div class="grid-repertoire">
+
+      <div class="repertoire-block">
+        <h1>Haydn</h1><br><br>
+        <h3>Missa in Augustis</h3>
+        <p>TE DEUM</p>
+        <img src="images/anciens-concerts/Affiche_Concert_Haydn_4avril.png" alt="Haydn">
+      </div>
+
+      <div class="repertoire-block">
+        <h1>Monteverdi</h1><br><br>
+        <h3>SCHERZI MUSICALI</h3>
+        <p>Si dolce e'l tormento</p>
+        <br>
+
+        <h3>MADRIGALI GUERRIERI E AMOROSI</h3>
+        <p>(livres 7 et 8 extraits)</p>
+        <p>Lamento della ninfa</p>
+        <p>Dolcissimo uscignolo</p>
+        <p> Vago Augeletto</p>
+        <p>Hor che'l ciel e la terra</p>
+        <p>O come sei gentile</p>
+        <p>S'el vostro cor madonna</p>
+        <p>Con che soavita labra</p>
+        <p>Altri canti d'amor</p>
+        <p>Ballo Tirsi e Clori</p>
+        <br>
+        <img src="images/anciens-concerts/Affiche_Monteverdi.jpg" alt="Monteverdi">
+      </div>
+
+      <div class="repertoire-block">
+        <h1>Haendel</h1><br><br>
+        <h3>DIXIT DOMINUS</h3><br>
+        <h3>LAUDATE PUERI</h3><br>
+        <h3>NISI DOMINUS</h3><br>
+        <img src="images/anciens-concerts/Haendel.jpg" alt="Haendel">
+      </div>
+
+      <div class="repertoire-block">
+        <h1>Brahms</h1><br><br>
+        <h3>LIEBESLIEDER</h3><br>
+        <h3>NEUE LIEBESLIEDER</h3><br>
+        <p>Sehnsucht</p>
+        <p>Warum</p>
+        <p>Abendlied</p>
+        <p>O schöne Nacht</p>
+        <p>Spätherbst</p>
+        <p>Geistliches Lied</p>
+        <br>
+        <img src="images/anciens-concerts/Brahms.jpg" alt="Brahms">
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024-2025 Voci in Scena - design by 
+      <a href="https://blackswordstudios.com" target="_blank" style="color: #ccc; text-decoration: underline;">BSS</a>
+    </p>
+  </footer>
+</body>
+</html>

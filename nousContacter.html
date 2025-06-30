@@ -1,51 +1,98 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nous contacter</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voci in Scena</title>
+    <link rel="stylesheet" href="styles.css">
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <link rel="shortcut icon" href="favicon/favicon.ico">
-  <meta name="theme-color" content="#ffffff">
-
+    <!-- Favicon links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="icon" sizes="512x512" href="favicon/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    
+    <!-- Theme color for browsers -->
+    <meta name="theme-color" content="#ffffff">
 </head>
 <script src="js/sidebar.js"></script>
 
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="vociPresentation.html">Qui sommes-nous ?</a></li>
-        <li><a href="https://icm-musique.fr/enseignants/professeur-piano-a-domicile-chant-olivier-rot/" target="_blank">Chef de chœur</a></li>
-        <li><a href="repertoire.html">Répertoire</a></li>
-        <li><a href="#">Nous soutenir</a></li>
-        <li><a href="#">Nous contacter</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="vociPresentation.html">Qui sommes-nous?</a></li>
+                <li><a href="chefChoeur.html">Chef de chœur</a></li>
+                <li><a href="testrepertoire.html">Répertoire</a></li>
+                <li><a href="nousSoutenir.html">Nous soutenir</a></li>
+                <li><a href="nousContacter.html">Nous contacter</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="content">
-    <aside class="sidebar">
-      <!-- Vide ici, mais on peut y remettre la logique plus tard -->
-    </aside>
+    <div class="content">
+        <aside class="sidebar">
+            <!-- The sidebar will be dynamically populated with concert data from concerts.json -->
+        </aside>
 
     <main>
-      <main>
-        <div class="text-box">
-            <h2>Pour nous contacter:</h2>
+      <div class="text-box">
+        <div class="contact-container">
+      
+          <!-- Colonne gauche : texte + formulaire -->
+          <div class="contact-form-side">
+            <h2>Pour nous contacter :</h2>
+      
             <p>
-                Olivier Rot : ol at gmail dot com
+              Vous pouvez utiliser ce formulaire pour :
+              <ul>
+                <li>Rejoindre la chorale,</li>
+                <li>Nous engager pour une prestation (concert, événement...),</li>
+                <li>Ou simplement poser une question !</li>
+              </ul>
+              Nous vous répondrons dès que possible.
             </p>
+      
+            <form action="https://formsubmit.co/laurent.david711@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_subject" value="Nouveau message depuis le site Voci in Scena">
+      
+              <label for="nom">Nom* :</label>
+              <input type="text" id="nom" name="Nom" required>
+      
+              <label for="email">Adresse email* :</label>
+              <input type="email" id="email" name="Email" required>
+      
+              <label for="telephone">Téléphone :</label>
+              <input type="tel" id="telephone" name="Téléphone">
+      
+              <label for="objet">Objet :</label>
+              <input type="text" id="objet" name="Objet">
+      
+              <label for="message">Message* :</label>
+              <textarea id="message" name="Message" rows="6" required></textarea>
+      
+              <button type="submit">Envoyer</button>
+      
+              <p style="font-size: 0.9em; margin-top: 10px;">* Champs obligatoires</p>
+            </form>
+          </div>
+      
+          <!-- Colonne droite : coordonnées -->
+          <div class="contact-infos">
+            <h3>Coordonnées</h3>
+            <p>
+              Association Voci in Scena<br>
+              Adresse<br>
+              Telephone<br><br>
+              Email : ol DOT Rot AT gmail DOT com
+            </p>
+          </div>
+      
         </div>
-    
-        <img src="images/background.jpg" alt="Photo_Voci" class="concert-poster">
-      </main>
+      </div>
     </main>
   </div>
 

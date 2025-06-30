@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Titre
             const titleElement = document.createElement('h2');
-            titleElement.innerText = "Prochains concerts";
+            titleElement.innerText = "Prochain concert";
             sidebar.appendChild(titleElement);
 
             // Concerts
