@@ -49,63 +49,133 @@
     }
   </style>
 </head>
-
+<script src="js/sidebar.js"></script>
 <body>
   <header>
     <nav>
       <ul>
         <li><a href="vociPresentation.html">Qui sommes-nous ?</a></li>
-        <li><a href="chefChoeur.html">Chef de chœur</a></li>
+        <li><a href="directeurMusical.html">Directeur musical</a></li>
         <li><a href="repertoire.html">Répertoire</a></li>
-        <li><a href="#">Nous soutenir</a></li>
+        <li><a href="nousSoutenir.html">Nous soutenir</a></li>
         <li><a href="nousContacter.html">Nous contacter</a></li>
+        <li><a href="accompagnants.html">Ils nous accompagnent</a></li>
+        <li><a href="avis.html">Avis</a></li>
       </ul>
     </nav>
   </header>
 
+
+  <div class="content">
+    <aside class="sidebar">
+        <!-- The sidebar will be dynamically populated with concert data from concerts.json -->
+    </aside>
+
   <main>
     <h1 class="title-box">Répertoire</h1>
-    <div class="grid-repertoire">
+    <div class="grid-repertoire" style="--cols: 2;">
 
-      <div class="repertoire-block">
-        <h1>Haydn</h1><br><br>
-        <h3>Missa in Augustis</h3>
-        <p>TE DEUM</p>
-        <img src="images/anciens-concerts/Affiche_Concert_Haydn_4avril.png" alt="Haydn">
+      <!-- Exemple Haydn (ouvre un modal) -->
+     <div class="repertoire-block" onclick="openModal('haydnModal')">
+      <h1>Joseph Haydn</h1>
+      <h2>Missa in Augustiis</h2>
+      <br><br>
+      <img src="images/anciens-concerts/Affiche_Concert_Haydn_4avril.png" alt="Haydn">
+      <p class="click-hint">Cliquez pour voir la description complète</p>
+    </div>
+
+    <!-- Modal Hyadn -->
+    <div id="haydnModal" class="modal">
+      <div class="modal-content">
+        <div class="centered-section">
+          <h1>Joseph Haydn</h1>
+          <h2>Missa in Augustiis</h2>
+        <img src="images/anciens-concerts/Affiche_Concert_Haydn_4avril.png" alt="Haydn" style="margin-top:20px; max-width:100%;">      </div>
+    </div>
+    </div>
+
+     <!-- Exemple Monteverdi (ouvre un modal) -->
+     <div class="repertoire-block" onclick="openModal('monteverdiModal')">
+      <h1>Claudio Monteverdi</h1>
+      <h2>« De Guerre & d’Amour »</h2>
+      <img src="images/anciens-concerts/Affiche_Monteverdi.jpg" alt="Monteverdi">
+      <p class="click-hint">Cliquez pour voir la description complète</p>
+    </div>
+
+    <!-- Modal Monteverdi -->
+    <div id="monteverdiModal" class="modal">
+      <div class="modal-content">
+        <div class="centered-section">
+        <h1>Claudio Monteverdi – « De Guerre & d’Amour »</h1>
+        <h3>Madrigali Guerrieri e Amorosi (livres 7 & 8, extraits)</h3>
+        <p>Lamento della ninfa, Dolcissimo uscignolo, Vago augeletto, Hor che’l ciel e la terre, O come sei gentile, Non vedrò mai le stelle, Con che soavità labbra, Altri canti d’amor</p>
+        <p>Scherzi musicali</p>
+        <p>Si dolce e’l tormento</p>
       </div>
-
-      <div class="repertoire-block">
-        <h1>Monteverdi</h1><br><br>
-        <h3>SCHERZI MUSICALI</h3>
-        <p>Si dolce e'l tormento</p>
-        <br>
-
-        <h3>MADRIGALI GUERRIERI E AMOROSI</h3>
-        <p>(livres 7 et 8 extraits)</p>
-        <p>Lamento della ninfa</p>
-        <p>Dolcissimo uscignolo</p>
-        <p> Vago Augeletto</p>
-        <p>Hor che'l ciel e la terra</p>
-        <p>O come sei gentile</p>
-        <p>S'el vostro cor madonna</p>
-        <p>Con che soavita labra</p>
-        <p>Altri canti d'amor</p>
-        <p>Ballo Tirsi e Clori</p>
-        <br>
-        <img src="images/anciens-concerts/Affiche_Monteverdi.jpg" alt="Monteverdi">
+        <p>
+          L’ensemble Vocal et Instrumental <strong>VOCI IN SCENA</strong> vous invite à un voyage sensible et 
+          émotionnel à travers les grands madrigaux des livres 7 & 8 « Guerrieri e Amorosi ».
+        </p>
+        <p>
+          Au sortir de la période faste et créatrice de la Renaissance, et sur le chemin du Baroque, 
+          Claudio Monteverdi, que l’on peut considérer comme le père de l’opéra, déploie dans ces grandes pièces 
+          la transition de l’écriture polyphonique vers le style opératique.
+        </p>
+        <p>
+          « Si dolce è ’l tormento che in seno mi sta ! » — si doux est le tourment que je sens dans mon cœur !
+        </p>
+        <p>
+          Cette nouvelle forme créatrice nous immerge dans l’émotion pure du chant lyrique — celle qui, plus tard, 
+          nous conduira à Haendel et Mozart, jusqu’aux grands compositeurs d’opéra du XIXe siècle romantique : Verdi, Puccini, Bizet...
+        </p>
+        <p>
+          Dans ce programme, l’amour et la guerre (symboliques ou non) sont des thèmes récurrents, 
+          parfaitement illustrés par le choix de ces « Madrigaux Guerriers et Amoureux ».
+        </p>
+        <img src="images/anciens-concerts/Affiche_Monteverdi.jpg" alt="Monteverdi" style="margin-top:20px; max-width:100%;">
       </div>
+    </div>
+      
 
-      <div class="repertoire-block">
-        <h1>Haendel</h1><br><br>
-        <h3>DIXIT DOMINUS</h3><br>
+    <!-- Exemple Haendel (ouvre un modal) -->
+    <div class="repertoire-block" onclick="openModal('haendelModal')">
+      <h1>Georg Friedrich Haendel</h1>
+      <h2>Les années de jeunesse</h2>
+      <br><br>
+      <img src="images/anciens-concerts/Haendel.jpg" alt="Haendel">
+      <p class="click-hint">Cliquez pour voir la description complète</p>
+    </div>
+
+    <!-- Modal Haendel -->
+    <div id="haendelModal" class="modal">
+      <div class="modal-content">
+        <div class="centered-section">
+          <h1>Georg Friedrich Haendel</h1>
+          <h2>Les années de jeunesse</h2>
+          <h3>DIXIT DOMINUS</h3><br>
         <h3>LAUDATE PUERI</h3><br>
         <h3>NISI DOMINUS</h3><br>
-        <img src="images/anciens-concerts/Haendel.jpg" alt="Haendel">
-      </div>
+          <img src="images/anciens-concerts/Haendel.jpg" alt="Haendel" style="margin-top:20px; max-width:100%;">      </div>
+    </div>
+    </div>
 
-      <div class="repertoire-block">
-        <h1>Brahms</h1><br><br>
-        <h3>LIEBESLIEDER</h3><br>
+
+    <!-- Brahms -->
+    <div class="repertoire-block" onclick="openModal('brahmsModal')">
+      <h1>Johannes Brahms</h1>
+      <h2>Die Sehnsucht ou l'âme du romantisme allemand</h2>
+      <br><br>
+      <img src="images/anciens-concerts/Brahms.jpg" alt="Brahms">
+      <p class="click-hint">Cliquez pour voir la description complète</p>
+    </div>
+
+    <!-- Modal brahms -->
+    <div id="brahmsModal" class="modal">
+      <div class="modal-content">
+        <div class="centered-section">
+          <h1>Johannes Brahms</h1>
+          <h2>Die Sehnsucht ou l'âme du romantisme allemand</h2>
+          <h3>LIEBESLIEDER</h3><br>
         <h3>NEUE LIEBESLIEDER</h3><br>
         <p>Sehnsucht</p>
         <p>Warum</p>
@@ -114,11 +184,14 @@
         <p>Spätherbst</p>
         <p>Geistliches Lied</p>
         <br>
-        <img src="images/anciens-concerts/Brahms.jpg" alt="Brahms">
-      </div>
+        <img src="images/anciens-concerts/Brahms.jpg" alt="Brahms" style="margin-top:20px; max-width:100%;">      </div>
+    </div>
+    </div>
+
 
     </div>
   </main>
+  </div>
 
   <footer>
     <p>&copy; 2024-2025 Voci in Scena - design by 
@@ -126,4 +199,95 @@
     </p>
   </footer>
 </body>
+
+<script>
+  // Define the function your HTML calls:
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
+  }
+
+  // Close when clicking outside the white content
+  window.addEventListener("click", (e) => {
+    const modal = document.getElementById("monteverdiModal");
+    if (modal && e.target === modal) {
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  // Also allow ESC to close
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const modal = document.getElementById("monteverdiModal");
+      if (modal && modal.style.display === "block") {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+      }
+    }
+  });
+
+  // Close when clicking outside the white content
+  window.addEventListener("click", (e) => {
+    const modal = document.getElementById("haydnModal");
+    if (modal && e.target === modal) {
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  // Also allow ESC to close
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const modal = document.getElementById("haydnModal");
+      if (modal && modal.style.display === "block") {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+      }
+    }
+  });
+
+  // Close when clicking outside the white content
+  window.addEventListener("click", (e) => {
+    const modal = document.getElementById("brahmsModal");
+    if (modal && e.target === modal) {
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  // Also allow ESC to close
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const modal = document.getElementById("brahmsModal");
+      if (modal && modal.style.display === "block") {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+      }
+    }
+  });
+
+  // Close when clicking outside the white content
+  window.addEventListener("click", (e) => {
+    const modal = document.getElementById("haendelModal");
+    if (modal && e.target === modal) {
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  // Also allow ESC to close
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const modal = document.getElementById("haendelModal");
+      if (modal && modal.style.display === "block") {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+      }
+    }
+  });
+</script>
+
 </html>

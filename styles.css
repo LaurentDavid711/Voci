@@ -30,10 +30,13 @@
 body {
     font-family: 'Goudy Old Style', Arial, sans-serif;
     color: white;
-    background-image: url('images/background.jpg');
+    /* background-image: url('images/background.jpg'); */
+    background-image: url('images/Voci_Background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    margin: 0;                   /* remove default margin that can create bands */
+    padding: 0;
 }
 
 /* Header styles */
@@ -67,7 +70,9 @@ header nav ul li a {
     font-family: 'Goudy Old Style Bold', serif;
     font-size: calc(0.8em + 0.5vw);
     padding: calc(6px + 0.2vw) calc(8px + 0.3vw);
-    background-color: #262c69;
+    /* background-color: #262c69; */
+    background: rgba(159, 190, 222, 0.346); /* bleu clair semi-transparent */
+    backdrop-filter: blur(4px);
     border-radius: 4px;
     overflow: hidden;
     transition: transform 0.3s ease, font-size 0.3s ease;
@@ -103,7 +108,9 @@ header nav ul li a:hover::before {
 /* Sidebar */
 .sidebar {
     width: 300px;
-    background-color: #262c69;
+    /* background-color: #262c69; */
+    background: rgba(159, 190, 222, 0.346); /* bleu clair semi-transparent */
+    backdrop-filter: blur(4px);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -410,26 +417,98 @@ h1 {
   }
   
 
-  .grid-repertoire {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin: 40px;
-    color: black; /* <--- ajoute cette ligne */
-  }
-  
-  .grid-repertoire > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ceci pousse l'image vers le bas */
-    height: 100%; /* permet d’uniformiser la hauteur des colonnes */
-  }
-  .grid-repertoire img {
-    max-width: 100%;
-    height: auto;
-    margin-top: auto; /* pousse l’image en bas si le contenu est plus court */
-  }
-  
+/* GRID: number of columns controlled by --cols variable */
+.grid-repertoire {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 2), 1fr); /* default 2 columns */
+  gap: 30px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Block styling */
+.repertoire-block {
+  background-color: #1c1c2a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.repertoire-block h1, 
+.repertoire-block h2, 
+.repertoire-block h3 {
+  margin: 10px 0;
+  color: #030303;
+}
+
+.repertoire-block p, 
+.repertoire-block li {
+  text-align: left;
+  color: #030303;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.repertoire-block img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+.repertoire-block {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.repertoire-block:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.click-hint {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding: 40px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  color: #000000;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+
+/* Centered section */
+.centered-section {
+  text-align: center;
+  margin-bottom: 40px; /* extra spacing after this block */
+}
 
 /* Layout adjustments for specific screen widths */
 @media (max-width: 927px) and (min-width: 475px) {
@@ -559,6 +638,10 @@ h1 {
       font-size: 1em;
       padding: 10px;
     }
+
+    .grid-repertoire {
+      grid-template-columns: 1fr;
+    }
   }
   
 
@@ -588,7 +671,10 @@ h1 {
         width: 60px;
         height: 60px;
     }
-}
+    .grid-repertoire {
+      grid-template-columns: repeat(2, 1fr); /* max 2 columns */
+    }
+  }
 
 /* Devices 1024px and above */
 @media (min-width: 1024px) {
