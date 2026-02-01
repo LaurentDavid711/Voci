@@ -417,6 +417,26 @@ h1 {
   }
   
 
+  .centered-section {
+    max-width: 900px;      /* ou ce que tu utilises déjà */
+    margin: 0 auto;
+    text-align: left;      /* ✅ texte aligné à gauche */
+  }
+  
+  .centered-section h1 {
+    text-align: center;    /* ✅ titre centré, c’est plus élégant */
+    margin-bottom: 1.5rem;
+  }
+  .program-details {
+    margin-top: 2.5rem;
+    line-height: 1.6;
+  }
+  
+  .program-details p {
+    margin-bottom: 1.2rem;
+  }
+    
+
 /* GRID: number of columns controlled by --cols variable */
 .grid-repertoire {
   display: grid;
@@ -504,11 +524,7 @@ h1 {
 }
 
 
-/* Centered section */
-.centered-section {
-  text-align: center;
-  margin-bottom: 40px; /* extra spacing after this block */
-}
+
 
 /* Layout adjustments for specific screen widths */
 @media (max-width: 927px) and (min-width: 475px) {
