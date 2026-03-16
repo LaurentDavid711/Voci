@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
             logoLink.appendChild(logoElement);
             sidebar.appendChild(logoLink);
 
+             // Newsletter
+             const newsletterLink = document.createElement('a');
+             newsletterLink.href = "RejoignezNous.html";
+             newsletterLink.classList.add('sidebar-button'); // note the new class
+             newsletterLink.innerText = "Rejoignez-nous !";
+             sidebar.appendChild(newsletterLink);
+             
             // Titre
             const titleElement = document.createElement('h2');
             titleElement.innerText = "Prochain concert";
@@ -33,6 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Concerts
             data.concerts.forEach(concert => {
+
+                const programElement = document.createElement('p');
+                programElement.classList.add('concert-info');
+                programElement.innerText = concert.program;
+                sidebar.appendChild(programElement);
+
                 const nameElement = document.createElement('p');
                 nameElement.classList.add('concert-name');
                 nameElement.innerText = concert.date;
@@ -43,14 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 infoElement.innerText = concert.location;
                 sidebar.appendChild(infoElement);
 
-                const programElement = document.createElement('p');
-                programElement.classList.add('concert-info');
-                programElement.innerText = concert.program;
-                sidebar.appendChild(programElement);
-
                 const detailsElement = document.createElement('p');
                 detailsElement.classList.add('concert-details');
-                detailsElement.innerText = concert.details;
+                // detailsElement.innerText = concert.details;
+                detailsElement.innerHTML = concert.details;
                 sidebar.appendChild(detailsElement);
             });
 
@@ -77,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             billetterieContainer.appendChild(billetterieLink);
             sidebar.appendChild(billetterieContainer);
+
+
 
             // Réseaux sociaux
             const socialContainer = document.createElement('div');

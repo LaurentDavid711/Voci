@@ -140,6 +140,24 @@ header nav ul li a:hover::before {
     margin-bottom: 10px;
 }
 
+.sidebar-button {
+  display: block;               /* makes it like a block so padding works */
+  text-align: center;           /* center the text inside */
+  background-color: #6695db;    /* blue background */
+  color: #ffffff;               /* white text */
+  font-weight: 700;             /* bold text */
+  padding: 10px 15px;           /* spacing inside the button */
+  margin: 15px 0;               /* spacing around the button */
+  border-radius: 5px;           /* rounded corners */
+  text-decoration: none;        /* remove underline */
+  font-size: 16px;              /* slightly bigger text */
+  transition: background-color 0.3s; /* smooth hover effect */
+}
+
+.sidebar-button:hover {
+  background-color: #2b5bb5;    /* darker blue on hover */
+}
+
 /* Billetterie Section */
 .billetterie-container {
     display: flex;
