@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
             billetterieContainer.classList.add('billetterie-container');
 
             const billetterieLink = document.createElement('a');
-            billetterieLink.href = "https://my.weezevent.com/claudio-monteverdi-de-guerre-damour-1";
+            //billetterieLink.href = "https://my.weezevent.com/claudio-monteverdi-de-guerre-damour-1"; 
+            billetterieLink.href = "https://www.helloasso.com/associations/voci-in-scena/evenements/die-sehnsucht-ou-l-ame-du-romantisme-allemand-brahms";
             billetterieLink.target = "_blank";
             billetterieLink.classList.add('billetterie-link');
             billetterieLink.setAttribute('aria-label', 'Billetterie Claudio Monteverdi');
