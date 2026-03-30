@@ -40,7 +40,7 @@
     </header>
 
     <!-- Bandeau mobile pour ouvrir la sidebar -->
-    <div class="sidebar-toggle" id="sidebar-toggle">Voir les prochains concerts</div>
+    <div class="sidebar-toggle" id="sidebar-toggle">Voir le prochain concert</div>
     <div class="content">
     <!-- Sidebar complète -->
     <aside class="sidebar">
@@ -219,38 +219,55 @@
     </footer>
     <!-- Script at the bottom of your HTML, before </body> -->
     <script>
-        // Burger menu
+      document.addEventListener("DOMContentLoaded", () => {
+      
+        // ===== Burger menu =====
         const burger = document.getElementById('burger');
         const nav = document.querySelector('nav ul');
-
-        burger.addEventListener('click', () => {
-          nav.classList.toggle('active');
-        });
-
-        // Toggle sidebar mobile
+      
+        if (burger && nav) {
+          burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+          });
+        }
+      
+        // ===== Sidebar mobile =====
         const sidebarToggle = document.getElementById("sidebar-toggle");
         const sidebar = document.querySelector(".sidebar");
-
-        sidebarToggle.addEventListener("click", () => {
+      
+        if (sidebarToggle && sidebar) {
+          sidebarToggle.addEventListener("click", () => {
             sidebar.classList.toggle("active");
-        });
+          });
+        }
 
-        toggle.addEventListener('click', () => {
-          sidebar.classList.toggle('active');
+        document.addEventListener("click", (e) => {
+          if (
+            sidebar.classList.contains("active") &&      // sidebar ouverte
+            !sidebar.contains(e.target) &&              // clic PAS dans sidebar
+            !sidebarToggle.contains(e.target)           // clic PAS sur bouton
+          ) {
+            sidebar.classList.remove("active");
+          }
         });
-
+      
+        // ===== Lire la suite =====
         const btn = document.getElementById('readMoreBtn');
-        btn.addEventListener('click', () => {
-            const moreText = document.querySelector('.more-text');
-            if (moreText.style.display === 'none') {
-                moreText.style.display = 'block';
-                btn.innerText = 'Réduire';
-                moreText.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const moreText = document.querySelector('.more-text');
+      
+        if (btn && moreText) {
+          btn.addEventListener('click', () => {
+            if (moreText.style.display === 'none' || moreText.style.display === '') {
+              moreText.style.display = 'block';
+              btn.innerText = 'Réduire';
             } else {
-                moreText.style.display = 'none';
-                btn.innerText = 'Lire la suite';
+              moreText.style.display = 'none';
+              btn.innerText = 'Lire la suite';
             }
-        });
-    </script>
+          });
+        }
+      
+      });
+      </script>
 </body>
 </html>
