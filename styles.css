@@ -33,6 +33,11 @@ header {
   cursor: pointer;
 }
 
+/* Mobile logo */
+.mobile-logo {
+  display: none;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -53,14 +58,26 @@ nav ul li a {
 ========================= */
 .content {
   display: flex;
+  flex-direction: row; /* desktop côte à côte */
   min-height: 100vh;
 }
 
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Sidebar desktop */
 .sidebar {
   width: 300px;
   background: rgba(159, 190, 222, 0.35);
   backdrop-filter: blur(4px);
   padding: 20px;
+  display: block; /* desktop visible */
+  position: relative;
 }
 
 .sidebar img {
@@ -73,19 +90,6 @@ nav ul li a {
   max-width: 200px;
   width: 100%;
   margin: 0 auto 20px;
-}
-
-.billetterie-icon {
-  width: 200px;
-  height: auto;
-}
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
 }
 
 /* =========================
@@ -130,9 +134,10 @@ main {
   height: 100%;
 }
 
+/* Grid repertoire */
 .grid-repertoire {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* max 3 colonnes */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 20px;
   max-width: 1200px;
@@ -146,9 +151,6 @@ main {
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.repertoire-block {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,10 +158,10 @@ main {
 }
 
 .repertoire-block img {
-  width: 100%;       /* prend toute la largeur du panneau */
-  height: auto;      /* garde les proportions */
-  display: block;    /* pour éviter les espaces bas */
-  border-radius: 8px; /* pour arrondir si tu veux */
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 .repertoire-block:hover {
@@ -167,6 +169,7 @@ main {
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -179,7 +182,6 @@ main {
   overflow-y: auto;
   background-color: rgba(0,0,0,0.7);
 }
-
 
 .modal-content {
   background: white;
@@ -200,12 +202,13 @@ main {
   cursor: pointer;
 }
 
-
-/* ===== CONTACT PAGE ===== */
+/* =========================
+   CONTACT PAGE
+========================= */
 .contact-container {
   display: flex;
-  gap: 40px;          /* espace entre colonnes */
-  flex-wrap: wrap;     /* permet de passer sur 2 lignes si l'écran est trop petit */
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .contact-form-side, .contact-infos {
@@ -216,11 +219,11 @@ main {
 }
 
 .contact-form-side {
-  flex: 2 1 400px;    /* prend plus de place, largeur minimum 400px */
+  flex: 2 1 400px;
 }
 
 .contact-infos {
-  flex: 1 1 250px;    /* moins large, minimum 250px */
+  flex: 1 1 250px;
 }
 
 .contact-form-side form {
@@ -252,11 +255,8 @@ main {
   background-color: #094bb5;
 }
 
-
-
-
 /* =========================
-   SIDEBAR (ACCORDION MOBILE)
+   SIDEBAR TOGGLE (MOBILE)
 ========================= */
 .sidebar-toggle {
   display: none;
@@ -282,11 +282,11 @@ footer {
 }
 
 /* =========================
-   MOBILE
+   MEDIA QUERIES MOBILE
 ========================= */
 @media (max-width: 768px) {
 
-  /* Layout becomes vertical */
+  /* Layout mobile vertical */
   .content {
     flex-direction: column;
   }
@@ -296,20 +296,11 @@ footer {
     padding: 10px;
   }
 
-/* Sidebar desktop */
-.sidebar {
-  width: 300px;
-  background: rgba(159, 190, 222, 0.35);
-  backdrop-filter: blur(4px);
-  padding: 20px;
-}
-
-/* Mobile : sidebar masquée et toggle */
-@media (max-width: 768px) {
+  /* Sidebar mobile */
   .sidebar {
-    display: none;
+    display: none; /* caché par défaut */
     position: absolute;
-    top: 50px; /* ajuster si tu as header fixe */
+    top: 50px;
     left: 0;
     width: 100%;
     background: rgba(159, 190, 222, 0.95);
@@ -323,26 +314,29 @@ footer {
 
   .sidebar-toggle {
     display: block;
-    background: #0c5fdc;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-bottom: 10px;
   }
 
-  /* Logo dans sidebar pour mobile */
-  .sidebar-logo img {
-    max-width: 120px;
-    display: block;
-    margin: 0 auto 20px;
+  /* Logo mobile à côté du burger */
+  .mobile-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
   }
-}
 
-  /* Burger menu */
+  .mobile-logo img {
+    max-width: 80px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .burger {
-    display: block;
+    display: inline-block;
   }
 
   nav ul {
@@ -370,40 +364,13 @@ footer {
     max-width: 100%;
   }
 
-  .concert-poster {
-    width: 100%;
-    max-width: 100%;
-  }
-
+  .concert-poster,
   .video-wrapper {
     width: 100%;
     max-width: 100%;
   }
-}
 
-/* =========================
-   DESKTOP ENHANCEMENTS
-========================= */
-@media (min-width: 1024px) {
-  .content {
-    padding: 40px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .grid-repertoire {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .grid-repertoire {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* RESPONSIVE : mobile */
-@media (max-width: 768px) {
+  /* Contact page mobile */
   .contact-container {
     flex-direction: column;
   }
@@ -411,23 +378,5 @@ footer {
   .contact-form-side, .contact-infos {
     width: 100%;
   }
-}
 
-@media (max-width: 768px) {
-  .mobile-logo img {
-    max-width: 80px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-  }
-
-  .burger {
-    display: inline-block;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 }
