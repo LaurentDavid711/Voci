@@ -10,357 +10,174 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <link rel="shortcut icon" href="favicon/favicon.ico">
-  <meta name="theme-color" content="#ffffff">
-
-  <style>
-    .grid-repertoire {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .repertoire-block {
-      background-color: #f5f5f5;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .repertoire-block img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 10px;
-      border-radius: 6px;
-    }
-
-    @media screen and (max-width: 1000px) {
-      .grid-repertoire {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .grid-repertoire {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
+
 <script src="js/sidebar.js"></script>
+
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="vociPresentation.html">Qui sommes-nous ?</a></li>
-        <li><a href="directeurMusical.html">Directeur musical</a></li>
-        <li><a href="repertoire.html">Répertoire</a></li>
-        <li><a href="nousSoutenir.html">Nous soutenir</a></li>
-        <li><a href="nousContacter.html">Nous contacter</a></li>
-        <li><a href="accompagnants.html">Ils nous accompagnent</a></li>
-        <li><a href="avis.html">Avis</a></li>
-      </ul>
-    </nav>
-  </header>
 
+<header>
+  <div class="burger" id="burger">&#9776;</div> <!-- bouton burger -->
+  <nav>
+    <a href="index.html" class="mobile-logo">
+      <img src="images/logo.jpg" alt="Logo Voci in Scena">
+    </a>
+    <ul id="nav-list">
+      <li><a href="vociPresentation.html">Qui sommes-nous ?</a></li>
+      <li><a href="directeurMusical.html">Directeur musical</a></li>
+      <li><a href="testrepertoire.html">Répertoire</a></li>
+      <li><a href="nousSoutenir.html">Nous soutenir</a></li>
+      <li><a href="nousContacter.html">Nous contacter</a></li>
+      <li><a href="accompagnants.html">Ils nous accompagnent</a></li>
+      <li><a href="avis.html">Avis</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <div class="content">
-    <aside class="sidebar">
-        <!-- The sidebar will be dynamically populated with concert data from concerts.json -->
-    </aside>
+<div class="content">
+
+  <aside class="sidebar"></aside>
 
   <main>
     <h1 class="title-box">Répertoire</h1>
-    <div class="grid-repertoire" style="--cols: 2;">
 
-      <!-- Exemple Haydn (ouvre un modal) -->
-     <div class="repertoire-block" onclick="openModal('haydnModal')">
-      <h1>Joseph Haydn</h1>
-      <h2>Missa in Augustiis</h2>
-      <br><br>
-      <img src="images/anciens-concerts/Affiche_Concert_Haydn_4avril.png" alt="Haydn">
-      <p class="click-hint">Cliquez pour voir la description complète</p>
-    </div>
+    <div class="grid-repertoire">
 
-    <!-- Modal Hyadn -->
-    <div id="haydnModal" class="modal">
-      <div class="modal-content">
-        <div class="centered-section">
-            <h1>Joseph Haydn</h1>
-            <h3>Missa in Angustiis, dite Nelson Messe</h3>
-            <h3>Air de concert, Scène de Berenice</h3>
-          </div>
-        <p>
-          L’ensemble vocal et instrumental <strong>VOCI IN SCENA</strong> vous propose un
-          très beau programme Joseph HAYDN, autour de trois œuvres assez
-          révélatrices du style brillant, sensible, et théâtral du compositeur
-          Autrichien et composées dans les années 1795-1798, quand il alternait les
-          résidences entre Vienne et Londres.
-        </p>
-        <p>
-          « <i>Scena di Berenice</i> », air de concert, pour Soprano est un véritable chef
-          d’œuvre d’écriture dramatique, écrit comme un air d’opéra, avec une
-          alternance de récitatifs accompagnés par l’orchestre, et d’arias lents puis
-          rapides. Il montre l’audace et la qualité d’écriture de HAYDN qui n’a rien
-          à envier à celle de MOZART.
-        </p>
-        <p>
-          La messe « <i>In Augustiis</i> » plus connue sous le nom de « NELSON
-          MESSE », est la plus connue des quatorze messes, à la fois spectaculaire
-          et expressive, avec par exemple son majestueux Gloria d’entrée en ré
-          mineur, son surprenant et brillant Benedictus, et aussi par l’usage de
-          quasi systématique de timbales et trompettes, et vous sera présentée dans
-          sa version originale, où, au sein de l’orchestre, les instruments à vents
-          sont remplacés par un orgue.
-        </p>
-        <p>
-          Le brillant et court « <i>Te Deum</i> » complète ce programme, il est donné
-          dans sa version avec trompettes et timbales, et comme dans la messe
-          Nelson, les parties des vents seront jouées par l’orgue.
-        </p>
-        <img src="images/anciens-concerts/Affiche_Concert_Haydn_4avril.png" alt="Haydn" style="margin-top:20px; max-width:100%;">
+      <!-- HAYDN -->
+      <div class="repertoire-block" onclick="openModal('haydnModal')">
+        <h2>Joseph Haydn</h2>
+        <h3>Missa in Augustiis</h3>
+        <img src="images/anciens-concerts/Affiche_Concert_Haydn_4avril.png">
+        <p class="click-hint">Cliquez pour voir la description complète</p>
       </div>
-    </div>
 
-     <!-- Exemple Monteverdi (ouvre un modal) -->
-     <div class="repertoire-block" onclick="openModal('monteverdiModal')">
-      <h1>Claudio Monteverdi</h1>
-      <h2>« De Guerre & d’Amour »</h2>
-      <img src="images/anciens-concerts/Affiche_Monteverdi.jpg" alt="Monteverdi">
-      <p class="click-hint">Cliquez pour voir la description complète</p>
-    </div>
-
-    <!-- Modal Monteverdi -->
-    <div id="monteverdiModal" class="modal">
-      <div class="modal-content">
-        <div class="centered-section">
-          <h1>Claudio Monteverdi – « De Guerre & d’Amour »</h1>
-          <h3>Madrigali Guerrieri e Amorosi (livres 7 & 8, extraits)</h3>
-          <p>Lamento della ninfa, Dolcissimo uscignolo, Vago augeletto, Hor che’l ciel e la terre, O come sei gentile, Non vedrò mai le stelle, Con che soavità labbra, Altri canti d’amor</p>
-          <p>Scherzi musicali</p>
-          <p>Si dolce e’l tormento</p>
-        </div>
-        <p>
-          L’ensemble Vocal et Instrumental <strong>VOCI IN SCENA</strong> vous invite à un voyage sensible et 
-          émotionnel à travers les grands madrigaux des livres 7 & 8 « Guerrieri e Amorosi ».
-        </p>
-        <p>
-          Au sortir de la période faste et créatrice de la Renaissance, et sur le chemin du Baroque, 
-          Claudio Monteverdi, que l’on peut considérer comme le père de l’opéra, déploie dans ces grandes pièces 
-          la transition de l’écriture polyphonique vers le style opératique.
-        </p>
-        <p>
-          « Si dolce è ’l tormento che in seno mi sta ! » — si doux est le tourment que je sens dans mon cœur !
-        </p>
-        <p>
-          Cette nouvelle forme créatrice nous immerge dans l’émotion pure du chant lyrique — celle qui, plus tard, 
-          nous conduira à Haendel et Mozart, jusqu’aux grands compositeurs d’opéra du XIXe siècle romantique : Verdi, Puccini, Bizet...
-        </p>
-        <p>
-          Dans ce programme, l’amour et la guerre (symboliques ou non) sont des thèmes récurrents, 
-          parfaitement illustrés par le choix de ces « Madrigaux Guerriers et Amoureux ».
-        </p>
-        <img src="images/anciens-concerts/Affiche_Monteverdi.jpg" alt="Monteverdi" style="margin-top:20px; max-width:100%;">
+      <!-- MONTEVERDI -->
+      <div class="repertoire-block" onclick="openModal('monteverdiModal')">
+        <h2>Claudio Monteverdi</h2>
+        <h3>« De Guerre & d’Amour »</h3>
+        <img src="images/anciens-concerts/Affiche_Monteverdi.jpg">
+        <p class="click-hint">Cliquez pour voir la description complète</p>
       </div>
-    </div>
-      
 
-    <!-- Exemple Haendel (ouvre un modal) -->
-    <div class="repertoire-block" onclick="openModal('haendelModal')">
-      <h1>Georg Friedrich Haendel</h1>
-      <h2>Les années de jeunesse</h2>
-      <br><br>
-      <img src="images/anciens-concerts/Haendel.jpg" alt="Haendel">
-      <p class="click-hint">Cliquez pour voir la description complète</p>
-    </div>
-
-    <!-- Modal Haendel -->
-    <div id="haendelModal" class="modal">
-      <div class="modal-content">
-        <div class="centered-section">
-          <h1>Georg Friedrich HAENDEL à ROME, années de Jeunesse, 1707</h1>
-    
-        <p>
-          L’ensemble vocal et instrumental <strong>VOCI IN SCENA</strong> abordent ce programme, sous l’angle jubilatoire,
-          puissant et dynamique, et révélateur de l’écriture déjà accomplie du compositeur Saxon, grand voyageur
-          et déjà Européen, dans sa première période Italienne à <strong>ROME</strong>
-        </p><br>
-        <p>
-          Jeune compositeur âgé de tout juste 22 ans il semble vouloir montrer à ses hôtes Italiens dont le futur
-          cardinal Colonna, toute sa maitrise de l’écriture à la fois harmonique et contrapuntique, son sens des
-          couleurs et des effets dramatiques, et son imagination mélodique, un compositeur brillant et complet, et
-          qui bien que Luthérien saura intégrer tous les codes de la musique sacrée catholique, et devenir un des
-          plus illustres représentants de la période faste du Baroque dans la ville éternelle. Haendel est un grand
-          compositeur d’opéra, mais à Rome depuis 1703, Le pape Clément XI vient justement interdir le Théâtre
-          et l’Opéra ! Qu’à cela ne tienne, Georg Friedrich ira exceller dans le genre Oratorio, (qui est en quelque
-          sorte du théâtre religieux), avec ces trois œuvres à la fois très diverses et expressives que vous nous
-          présentons pour ce programme.
-        </p>
-        <br>
-        <h2>DIXIT DOMINUS HMW 238</h2>
-        <h2>LAUDATE PUERI DOMINUM HMW 237</h2>
-        <h2>DIXIT DOMINUS HMW 232</h2>
-          <img src="images/anciens-concerts/Haendel.jpg" alt="Haendel" style="margin-top:20px; max-width:100%;">      </div>
+      <!-- HAENDEL -->
+      <div class="repertoire-block" onclick="openModal('haendelModal')">
+        <h2>Georg Friedrich Haendel</h2>
+        <h3>Les années de jeunesse</h3>
+        <img src="images/anciens-concerts/Haendel.jpg">
+        <p class="click-hint">Cliquez pour voir la description complète</p>
       </div>
-    </div>
 
-
-    <!-- Brahms -->
-    <div class="repertoire-block" onclick="openModal('brahmsModal')">
-      <h1>Johannes Brahms</h1>
-      <h2>Die Sehnsucht ou l'âme du romantisme allemand</h2>
-      <br><br>
-      <img src="images/anciens-concerts/Brahms.jpg" alt="Brahms">
-      <p class="click-hint">Cliquez pour voir la description complète</p>
-    </div>
-
-    <!-- Modal brahms -->
-    <div id="brahmsModal" class="modal">
-      <div class="modal-content">
-        <div class="centered-section">
-          <h1>Johannes Brahms</h1>
-          <h2>Die Sehnsucht…ou l’âme du Romantisme Allemand, un voyage en émotion</h2>
-                    <br>
-                  <p>
-                    « Le terme Sehnsucht qu’il soit aspiration spirituelle, élan amoureux, désir d’échapper à la finitude, qu’il soit langueur,
-                    espérance ou passion, désigne un sentiment lancinant éprouvé dans la solitude. C’est une sorte de nostalgie tournée vers
-                    l’avenir, surgie du choc de deux pulsions contradictoires et complémentaires : la manifestation irrépressible d’un désir
-                    ardent et l’intuition que son accomplissement est tout à fait improbable »
-                    </p><p>
-                    Au travers de ce texte de Béatrice Gonzalés-Vangell premières lignes de cet ouvrage remarquable, propos sur
-                    l’intraduisible, tout est dit, et nous amène à repenser ou plutôt ressentir le Romantisme Allemand,
-                    dont la Sehnsucht est l’âme, mais aussi du Romantisme en général dans la culture, musique, littérature peinture,
-                    à la fois dans son contexte historique, mais aussi jusqu’à nos jours, ou sa modernité se retrouve à la fois dans la
-                    nécessité pour l’homme de retrouver un rapport à la nature, et surtout à l’altérité, et aux grands élans humains
-                    face à un monde toujours plus matérialiste, et impitoyable.
-                    </p><p>
-                    Les musiques de Johannes Brahms sont au centre de ce programme et nous emportent dans un chemin parsemé
-                    d’émotions, de sourire, le frisson qui parcourt notre corps car cette musique nous saisit instantanément,
-                    car elle nous parle au plus profond.
-                    </p><p>
-                    Un petit mot sur les liebeslieder, nommés liebeslieder-walzer.
-                    Le thème de la valse, musique d’essence populaire convient particulièrement à Brahms, mais le compositeur
-                    s’affranchi très vite de la légèreté apparente du ternaire, qu’il sublime souvent par une superposition de formules
-                    binaires, et par une science de l’harmonie et de la modulation.
-                    On peut dire que ce mouvement si fluide, transmet idéalement l’énergie vitale et les vagues infinies qui
-                    caractérisent toute l’œuvre de ce compositeur si puissant et sensible.
-                  </p>
-                  <br>
-          <h3>LIEBESLIEDER</h3>
-          <h3>NEUE LIEBESLIEDER</h3>
-          <p>Sehnsucht</p>
-          <p>Warum</p>
-          <p>Abendlied</p>
-          <p>O schöne Nacht</p>
-          <p>Spätherbst</p>
-          <p>Geistliches Lied</p>
-          <br>
-          <img src="images/anciens-concerts/Brahms.jpg" alt="Brahms" style="margin-top:20px; max-width:100%;">      </div>
-        </div>
-    </div>
-
+      <!-- BRAHMS -->
+      <div class="repertoire-block" onclick="openModal('brahmsModal')">
+        <h2>Johannes Brahms</h2>
+        <h3>Die Sehnsucht</h3>
+        <img src="images/anciens-concerts/Brahms.jpg">
+        <p class="click-hint">Cliquez pour voir la description complète</p>
+      </div>
 
     </div>
   </main>
-  </div>
+</div>
 
-  <footer>
-    <p>&copy; 2024-2025 Voci in Scena - design by 
-      <a href="https://blackswordstudios.com" target="_blank" style="color: #ccc; text-decoration: underline;">BSS</a>
-    </p>
-  </footer>
-</body>
+<!-- ================= MODALS (SORTIS DE LA GRID) ================= -->
+
+<div id="haydnModal" class="modal">
+  <div class="modal-content">
+    <button class="close-modal" onclick="document.getElementById('haydnModal').style.display='none'">✖</button>
+    <h1>Joseph Haydn</h1>
+    <h3>Missa in Angustiis, dite Nelson Messe</h3>
+    <h3>Air de concert, Scène de Berenice</h3>
+    <p>L’ensemble vocal et instrumental <strong>VOCI IN SCENA</strong> vous propose un très beau programme Joseph HAYDN, autour de trois œuvres assez révélatrices du style brillant, sensible, et théâtral du compositeur Autrichien et composées dans les années 1795-1798, quand il alternait les résidences entre Vienne et Londres.</p>
+    <p>« <i>Scena di Berenice</i> », air de concert, pour Soprano est un véritable chef d’œuvre d’écriture dramatique, écrit comme un air d’opéra, avec une alternance de récitatifs accompagnés par l’orchestre, et d’arias lents puis rapides. Il montre l’audace et la qualité d’écriture de HAYDN qui n’a rien à envier à celle de MOZART.</p>
+    <p>La messe « <i>In Augustiis</i> » plus connue sous le nom de « NELSON MESSE », est la plus connue des quatorze messes, à la fois spectaculaire et expressive, avec par exemple son majestueux Gloria d’entrée en ré mineur, son surprenant et brillant Benedictus, et aussi par l’usage quasi systématique de timbales et trompettes, et vous sera présentée dans sa version originale, où, au sein de l’orchestre, les instruments à vents sont remplacés par un orgue.</p>
+    <p>Le brillant et court « <i>Te Deum</i> » complète ce programme, il est donné dans sa version avec trompettes et timbales, et comme dans la messe Nelson, les parties des vents seront jouées par l’orgue.</p>
+    <!-- <img src="images/anciens-concerts/Affiche_Concert_Haydn_4avril.png"> -->
+  </div>
+</div>
+
+<!-- MONTEVERDI -->
+<div id="monteverdiModal" class="modal">
+  <div class="modal-content">
+    <button class="close-modal" onclick="document.getElementById('monteverdiModal').style.display='none'">✖</button>
+    <h1>Claudio Monteverdi – « De Guerre & d’Amour »</h1>
+    <h3>Madrigali Guerrieri e Amorosi (livres 7 & 8, extraits)</h3>
+    <p>Lamento della ninfa, Dolcissimo uscignolo, Vago augeletto, Hor che’l ciel e la terre, O come sei gentile, Non vedrò mai le stelle, Con che soavità labbra, Altri canti d’amor</p>
+    <p>Scherzi musicali</p>
+    <p>Si dolce e’l tormento</p>
+    <p>L’ensemble Vocal et Instrumental <strong>VOCI IN SCENA</strong> vous invite à un voyage sensible et émotionnel à travers les grands madrigaux des livres 7 & 8 « Guerrieri e Amorosi ».</p>
+    <p>Au sortir de la période faste et créatrice de la Renaissance, et sur le chemin du Baroque, Claudio Monteverdi, que l’on peut considérer comme le père de l’opéra, déploie dans ces grandes pièces la transition de l’écriture polyphonique vers le style opératique.</p>
+    <p>« Si dolce è ’l tormento che in seno mi sta ! » — si doux est le tourment que je sens dans mon cœur !</p>
+    <p>Cette nouvelle forme créatrice nous immerge dans l’émotion pure du chant lyrique — celle qui, plus tard, nous conduira à Haendel et Mozart, jusqu’aux grands compositeurs d’opéra du XIXe siècle romantique : Verdi, Puccini, Bizet...</p>
+    <p>Dans ce programme, l’amour et la guerre (symboliques ou non) sont des thèmes récurrents, parfaitement illustrés par le choix de ces « Madrigaux Guerriers et Amoureux ».</p>
+  </div>
+</div>
+
+<!-- HAENDEL -->
+<div id="haendelModal" class="modal">
+  <div class="modal-content">
+    <button class="close-modal" onclick="document.getElementById('haendelModal').style.display='none'">✖</button>
+    <h1>Georg Friedrich HAENDEL à ROME, années de Jeunesse, 1707</h1>
+    <p>L’ensemble vocal et instrumental <strong>VOCI IN SCENA</strong> abordent ce programme, sous l’angle jubilatoire, puissant et dynamique, et révélateur de l’écriture déjà accomplie du compositeur Saxon, grand voyageur et déjà Européen, dans sa première période Italienne à <strong>ROME</strong>.</p>
+    <p>Jeune compositeur âgé de tout juste 22 ans il semble vouloir montrer à ses hôtes Italiens dont le futur cardinal Colonna, toute sa maitrise de l’écriture à la fois harmonique et contrapuntique, son sens des couleurs et des effets dramatiques, et son imagination mélodique, un compositeur brillant et complet, et qui bien que Luthérien saura intégrer tous les codes de la musique sacrée catholique, et devenir un des plus illustres représentants de la période faste du Baroque dans la ville éternelle. Haendel est un grand compositeur d’opéra, mais à Rome depuis 1703, Le pape Clément XI vient justement interdir le Théâtre et l’Opéra ! Qu’à cela ne tienne, Georg Friedrich ira exceller dans le genre Oratorio, (qui est en quelque sorte du théâtre religieux), avec ces trois œuvres à la fois très diverses et expressives que vous nous présentons pour ce programme.</p>
+    <h2>DIXIT DOMINUS HMW 238</h2>
+    <h2>LAUDATE PUERI DOMINUM HMW 237</h2>
+    <h2>DIXIT DOMINUS HMW 232</h2>
+  </div>
+</div>
+
+<!-- BRAHMS -->
+<div id="brahmsModal" class="modal">
+  <div class="modal-content">
+    <button class="close-modal" onclick="document.getElementById('brahmsModal').style.display='none'">✖</button>
+    <h1>Johannes Brahms</h1>
+    <h2>Die Sehnsucht…ou l’âme du Romantisme Allemand, un voyage en émotion</h2>
+    <p>« Le terme Sehnsucht qu’il soit aspiration spirituelle, élan amoureux, désir d’échapper à la finitude, qu’il soit langueur, espérance ou passion, désigne un sentiment lancinant éprouvé dans la solitude. C’est une sorte de nostalgie tournée vers l’avenir, surgie du choc de deux pulsions contradictoires et complémentaires : la manifestation irrépressible d’un désir ardent et l’intuition que son accomplissement est tout à fait improbable »</p>
+    <p>Au travers de ce texte de Béatrice Gonzalés-Vangell premières lignes de cet ouvrage remarquable, propos sur l’intraduisible, tout est dit, et nous amène à repenser ou plutôt ressentir le Romantisme Allemand, dont la Sehnsucht est l’âme, mais aussi du Romantisme en général dans la culture, musique, littérature peinture, à la fois dans son contexte historique, mais aussi jusqu’à nos jours, où sa modernité se retrouve à la fois dans la nécessité pour l’homme de retrouver un rapport à la nature, et surtout à l’altérité, et aux grands élans humains face à un monde toujours plus matérialiste, et impitoyable.</p>
+    <p>Les musiques de Johannes Brahms sont au centre de ce programme et nous emportent dans un chemin parsemé d’émotions, de sourire, le frisson qui parcourt notre corps car cette musique nous saisit instantanément, car elle nous parle au plus profond.</p>
+    <p>Un petit mot sur les liebeslieder, nommés liebeslieder-walzer. Le thème de la valse, musique d’essence populaire convient particulièrement à Brahms, mais le compositeur s’affranchit très vite de la légèreté apparente du ternaire, qu’il sublime souvent par une superposition de formules binaires, et par une science de l’harmonie et de la modulation. On peut dire que ce mouvement si fluide, transmet idéalement l’énergie vitale et les vagues infinies qui caractérisent toute l’œuvre de ce compositeur si puissant et sensible.</p>
+    <h3>LIEBESLIEDER</h3>
+    <h3>NEUE LIEBESLIEDER</h3>
+    <p>Sehnsucht</p>
+    <p>Warum</p>
+    <p>Abendlied</p>
+    <p>O schöne Nacht</p>
+    <p>Spätherbst</p>
+    <p>Geistliches Lied</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024-2025 Voci in Scena</p>
+</footer>
 
 <script>
-  // Define the function your HTML calls:
-  function openModal(id) {
-    const modal = document.getElementById(id);
-    if (!modal) return;
-    modal.style.display = "block";
-    modal.setAttribute("aria-hidden", "false");
+function openModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = "block";
+}
+
+window.addEventListener("click", (e) => {
+  document.querySelectorAll(".modal").forEach(modal => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.style.display = "none";
+    });
   }
+});
 
-  // Close when clicking outside the white content
-  window.addEventListener("click", (e) => {
-    const modal = document.getElementById("monteverdiModal");
-    if (modal && e.target === modal) {
-      modal.style.display = "none";
-      modal.setAttribute("aria-hidden", "true");
-    }
-  });
+// burger menu
+const burger = document.getElementById("burger");
+const navList = document.getElementById("nav-list");
 
-  // Also allow ESC to close
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const modal = document.getElementById("monteverdiModal");
-      if (modal && modal.style.display === "block") {
-        modal.style.display = "none";
-        modal.setAttribute("aria-hidden", "true");
-      }
-    }
-  });
-
-  // Close when clicking outside the white content
-  window.addEventListener("click", (e) => {
-    const modal = document.getElementById("haydnModal");
-    if (modal && e.target === modal) {
-      modal.style.display = "none";
-      modal.setAttribute("aria-hidden", "true");
-    }
-  });
-
-  // Also allow ESC to close
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const modal = document.getElementById("haydnModal");
-      if (modal && modal.style.display === "block") {
-        modal.style.display = "none";
-        modal.setAttribute("aria-hidden", "true");
-      }
-    }
-  });
-
-  // Close when clicking outside the white content
-  window.addEventListener("click", (e) => {
-    const modal = document.getElementById("brahmsModal");
-    if (modal && e.target === modal) {
-      modal.style.display = "none";
-      modal.setAttribute("aria-hidden", "true");
-    }
-  });
-
-  // Also allow ESC to close
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const modal = document.getElementById("brahmsModal");
-      if (modal && modal.style.display === "block") {
-        modal.style.display = "none";
-        modal.setAttribute("aria-hidden", "true");
-      }
-    }
-  });
-
-  // Close when clicking outside the white content
-  window.addEventListener("click", (e) => {
-    const modal = document.getElementById("haendelModal");
-    if (modal && e.target === modal) {
-      modal.style.display = "none";
-      modal.setAttribute("aria-hidden", "true");
-    }
-  });
-
-  // Also allow ESC to close
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const modal = document.getElementById("haendelModal");
-      if (modal && modal.style.display === "block") {
-        modal.style.display = "none";
-        modal.setAttribute("aria-hidden", "true");
-      }
-    }
-  });
+burger.addEventListener("click", () => {
+navList.classList.toggle("active");
+});
 </script>
 
+</body>
 </html>

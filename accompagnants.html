@@ -19,9 +19,13 @@
 
 <body>
   <header>
+    <div class="burger" id="burger">&#9776;</div> <!-- bouton burger -->
     <nav>
-      <ul>
-        <li><a href="#">Qui sommes-nous ?</a></li>
+      <a href="index.html" class="mobile-logo">
+        <img src="images/logo.jpg" alt="Logo Voci in Scena">
+      </a>
+      <ul id="nav-list">
+        <li><a href="vociPresentation.html">Qui sommes-nous?</a></li>
         <li><a href="directeurMusical.html">Directeur musical</a></li>
         <li><a href="testrepertoire.html">Répertoire</a></li>
         <li><a href="nousSoutenir.html">Nous soutenir</a></li>
@@ -65,5 +69,15 @@
       <a href="https://blackswordstudios.com" target="_blank" style="color: #ccc; text-decoration: underline;">BSS</a>
     </p>
   </footer>
+  <script>
+    // burger menu
+    const burger = document.getElementById("burger");
+    const navList = document.getElementById("nav-list");
+
+    burger.addEventListener("click", () => {
+    navList.classList.toggle("active");
+    });
+  </script>
 </body>
+
 </html>

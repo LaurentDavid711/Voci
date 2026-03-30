@@ -21,7 +21,11 @@
 
 <body>
     <header>
+      <div class="burger" id="burger">☰</div>
         <nav>
+          <a href="index.html" class="mobile-logo">
+            <img src="images/logo.jpg" alt="Logo Voci in Scena">
+          </a>
             <ul>
                 <li><a href="vociPresentation.html">Qui sommes-nous?</a></li>
                 <!-- <li><a href="https://icm-musique.fr/enseignants/professeur-piano-a-domicile-chant-olivier-rot/" target="_blank">Chef de chœur</a></li> -->
@@ -35,10 +39,16 @@
         </nav>
     </header>
 
-    <div class="content">
-        <aside class="sidebar">
-            <!-- The sidebar will be dynamically populated with concert data from concerts.json -->
-        </aside>
+    <!-- Bandeau mobile pour ouvrir la sidebar -->
+    <div class="sidebar-toggle" id="sidebar-toggle">Voir les prochains concerts</div>
+
+    <!-- Sidebar complète -->
+    <aside class="sidebar">
+        <a href="index.html" class="sidebar-logo">
+            <img src="images/Voci_Logo.png" alt="Logo Voci in Scena">
+        </a>
+        <!-- Contenu dynamique des concerts -->
+    </aside>
         
         <main>
             <h1 class="title-box">Prochain concert : Brahms, Sehnsucht, 30 mai</h1>
@@ -209,6 +219,26 @@
     </footer>
     <!-- Script at the bottom of your HTML, before </body> -->
     <script>
+        // Burger menu
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('nav ul');
+
+        burger.addEventListener('click', () => {
+          nav.classList.toggle('active');
+        });
+
+        // Toggle sidebar mobile
+        const sidebarToggle = document.getElementById("sidebar-toggle");
+        const sidebar = document.querySelector(".sidebar");
+
+        sidebarToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+
+        toggle.addEventListener('click', () => {
+          sidebar.classList.toggle('active');
+        });
+
         const btn = document.getElementById('readMoreBtn');
         btn.addEventListener('click', () => {
             const moreText = document.querySelector('.more-text');

@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
             // Réseaux sociaux
-            const socialContainer = document.createElement('div');
+            /* const socialContainer = document.createElement('div');
             socialContainer.classList.add('social-container');
 
             const facebookLink = document.createElement('a');
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             instagramLink.appendChild(instagramIcon);
             socialContainer.appendChild(instagramLink);
 
-            sidebar.appendChild(socialContainer);
+            sidebar.appendChild(socialContainer); */
         })
         .catch(error => console.error('Erreur lors du chargement des données de concert:', error));
 });
