@@ -26,12 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
             logoLink.appendChild(logoElement);
             sidebar.appendChild(logoLink);
 
-             // Newsletter
-             const newsletterLink = document.createElement('a');
-             newsletterLink.href = "RejoignezNous.html";
-             newsletterLink.classList.add('sidebar-button'); // note the new class
-             newsletterLink.innerText = "Rejoignez-nous !";
-             sidebar.appendChild(newsletterLink);
+            // ===== BOUTON BILLETTERIE =====
+            const billetterieLink = document.createElement('a');
+            billetterieLink.href = "https://www.helloasso.com/associations/voci-in-scena/evenements/die-sehnsucht-ou-l-ame-du-romantisme-allemand-brahms";
+            billetterieLink.target = "_blank";
+            billetterieLink.classList.add('sidebar-button', 'billetterie-button');
+            billetterieLink.innerText = "🎟️ Billetterie";
+            sidebar.appendChild(billetterieLink);
              
             // Titre
             const titleElement = document.createElement('h2');
@@ -63,32 +64,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 sidebar.appendChild(detailsElement);
             });
 
-            // Billetterie
-            const billetterieContainer = document.createElement('div');
-            billetterieContainer.classList.add('billetterie-container');
 
-            const billetterieLink = document.createElement('a');
-            //billetterieLink.href = "https://my.weezevent.com/claudio-monteverdi-de-guerre-damour-1"; 
-            billetterieLink.href = "https://www.helloasso.com/associations/voci-in-scena/evenements/die-sehnsucht-ou-l-ame-du-romantisme-allemand-brahms";
-            billetterieLink.target = "_blank";
-            billetterieLink.classList.add('billetterie-link');
-            billetterieLink.setAttribute('aria-label', 'Billetterie Claudio Monteverdi');
-
-            const billetterieIcon = document.createElement('img');
-            billetterieIcon.src = "images/billetterie.png";
-            billetterieIcon.alt = "Billetterie";
-            billetterieIcon.classList.add('billetterie-icon');
-            billetterieLink.appendChild(billetterieIcon);
-
-            const billetterieLabel = document.createElement('span');
-            billetterieLabel.classList.add('billetterie-label');
-            billetterieLabel.innerText = "Billetterie";
-            billetterieLink.appendChild(billetterieLabel);
-
-            billetterieContainer.appendChild(billetterieLink);
-            sidebar.appendChild(billetterieContainer);
+            // ===== BOUTON REJOIGNEZ-NOUS =====
+            const rejoindreLink = document.createElement('a');
+            rejoindreLink.href = "RejoignezNous.html";
+            rejoindreLink.classList.add('sidebar-button', 'random-color-button');
+            rejoindreLink.innerText = "Rejoignez-nous !";
+            sidebar.appendChild(rejoindreLink);
 
 
+            // ===== COULEUR ALEATOIRE POUR REJOIGNEZ-NOUS =====
+            const colors = [
+                "#0c5fdc",  // bleu
+                "#27ae60",  // vert
+                "#8e44ad",  // violet
+                "#e67e22",  // orange
+                "#16a085",  // turquoise
+                "#c0392b"   // rouge
+            ];
+
+            const randomButton = document.querySelector('.random-color-button');
+
+            if (randomButton) {
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                randomButton.style.backgroundColor = randomColor;
+            }
+
+
+            
 
             // Réseaux sociaux
             /* const socialContainer = document.createElement('div');
