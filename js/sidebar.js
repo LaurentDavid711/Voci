@@ -75,12 +75,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // ===== COULEUR ALEATOIRE POUR REJOIGNEZ-NOUS =====
             const colors = [
-                "#0c5fdc",  // bleu
-                "#27ae60",  // vert
-                "#8e44ad",  // violet
-                "#e67e22",  // orange
-                "#16a085",  // turquoise
-                "#c0392b"   // rouge
+                //"#0c5fdc",  // bleu
+                //"#27ae60",  // vert
+                //"#8e44ad",  // violet
+                "#e67e22"//,  // orange
+                //"#16a085",  // turquoise
+                //"#c0392b"   // rouge
             ];
 
             const randomButton = document.querySelector('.random-color-button');

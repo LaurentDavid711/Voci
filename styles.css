@@ -111,6 +111,11 @@ main {
   transform: scale(1.05);
 }
 
+.sidebar a {
+  color: white;
+  text-decoration: underline; /* optionnel */
+}
+
 /* Bouton billetterie (fixe) */
 .billetterie-button {
   background: #c0392b;
@@ -242,6 +247,22 @@ main {
   border: none;
   font-size: 1.5em;
   cursor: pointer;
+}
+
+.contact-page {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 0; /* enlève les coins arrondis */
+}
+
+.button-light {
+  color: #0c5fdc;
+  background: transparent;
+  border: 2px solid #0c5fdc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* =========================
